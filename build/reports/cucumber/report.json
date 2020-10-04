@@ -1,0 +1,315 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Como usuario quiero crear un proyecto para organizar Items",
+        "description": "",
+        "id": "proyecto;como-usuario-quiero-crear-un-proyecto-para-organizar-items",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 84926000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Una autenticacion en todo.ly",
+            "match": {
+              "location": "MyStepdefs.unaAutenticacionEnTodoLy()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 6698211000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Envio la solicitud POST a \u0027api/items.json\u0027 con el json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "POST",
+                  "offset": 19
+                },
+                {
+                  "val": "api/items.json",
+                  "offset": 27
+                }
+              ],
+              "location": "MyStepdefs.envioLaSolicitudApiProjectConElJson(String,String,String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "content_type": "",
+              "line": 6,
+              "value": "  {\r\n      \"Content\":\"4000\"\r\n  }"
+            }
+          },
+          {
+            "result": {
+              "duration": 1311300,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "Se espera el codigo de respuesta 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepdefs.seEsperaElCodigoDeRespuesta(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2563700,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Se espera que el Body de respuesta sea igual",
+            "match": {
+              "location": "MyStepdefs.seEsperaQueElBodyDeRespuestaSeaIgual(String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "content_type": "",
+              "line": 13,
+              "value": "{\r\n\"Id\": \"EXCLUDE\",\r\n\"Content\": \"4000\",\r\n\"ItemType\": 1,\r\n\"Checked\": false,\r\n\"ProjectId\": null,\r\n\"ParentId\": null,\r\n\"Path\": \"\",\r\n\"Collapsed\": false,\r\n\"DateString\": null,\r\n\"DateStringPriority\": 0,\r\n\"DueDate\": \"\",\r\n\"Recurrence\": null,\r\n\"ItemOrder\": null,\r\n\"Priority\": 4,\r\n\"LastSyncedDateTime\": \"EXCLUDE\",\r\n\"Children\": [],\r\n\"DueDateTime\": null,\r\n\"CreatedDate\": \"EXCLUDE\",\r\n\"LastCheckedDate\": null,\r\n\"LastUpdatedDate\": \"EXCLUDE\",\r\n\"Deleted\": false,\r\n\"Notes\": \"\",\r\n\"InHistory\": false,\r\n\"SyncClientCreationId\": null,\r\n\"DueTimeSpecified\": true,\r\n\"OwnerId\": \"EXCLUDE\"\r\n}"
+            }
+          },
+          {
+            "result": {
+              "duration": 123900,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "Obtengo el valor de propiedad \u0027Id\u0027 y se guarda en ID_PROJECT",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Id",
+                  "offset": 31
+                },
+                {
+                  "val": "ID_PROJECT",
+                  "offset": 50
+                }
+              ],
+              "location": "MyStepdefs.obtengoElValorDePropiedadYSeGuardaEnVARIABLE(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 92200,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Obtengo el valor de propiedad \u0027Content\u0027 y se guarda en ITEM_PROJECT",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Content",
+                  "offset": 31
+                },
+                {
+                  "val": "ITEM_PROJECT",
+                  "offset": 55
+                }
+              ],
+              "location": "MyStepdefs.obtengoElValorDePropiedadYSeGuardaEnVARIABLE(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 615702400,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "Envio la solicitud PUT a \u0027api/items/ID_PROJECT.json\u0027 con el json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "PUT",
+                  "offset": 19
+                },
+                {
+                  "val": "api/items/ID_PROJECT.json",
+                  "offset": 26
+                }
+              ],
+              "location": "MyStepdefs.envioLaSolicitudApiProjectConElJson(String,String,String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "content_type": "",
+              "line": 47,
+              "value": "{\r\n    \"Content\": \"ITEM_PROJECT ABC\",\r\n    \"Checked\":\"true\"\r\n}"
+            }
+          },
+          {
+            "result": {
+              "duration": 461000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "Se espera el codigo de respuesta 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepdefs.seEsperaElCodigoDeRespuesta(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2059400,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "Se espera que el Body de respuesta sea igual",
+            "match": {
+              "location": "MyStepdefs.seEsperaQueElBodyDeRespuestaSeaIgual(String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "content_type": "",
+              "line": 55,
+              "value": "{\r\n\"Id\": \"EXCLUDE\",\r\n\"Content\": \"ITEM_PROJECT ABC\",\r\n\"ItemType\": 1,\r\n\"Checked\": true,\r\n\"ProjectId\": null,\r\n\"ParentId\": null,\r\n\"Path\": \"\",\r\n\"Collapsed\": false,\r\n\"DateString\": null,\r\n\"DateStringPriority\": 0,\r\n\"DueDate\": \"\",\r\n\"Recurrence\": null,\r\n\"ItemOrder\": null,\r\n\"Priority\": 4,\r\n\"LastSyncedDateTime\": \"EXCLUDE\",\r\n\"Children\": [],\r\n\"DueDateTime\": null,\r\n\"CreatedDate\": \"EXCLUDE\",\r\n\"LastCheckedDate\": \"EXCLUDE\",\r\n\"LastUpdatedDate\": \"EXCLUDE\",\r\n\"Deleted\": \"EXCLUDE\",\r\n\"Notes\": \"\",\r\n\"InHistory\": true,\r\n\"SyncClientCreationId\": null,\r\n\"DueTimeSpecified\": true,\r\n\"OwnerId\": \"EXCLUDE\"\r\n}"
+            }
+          },
+          {
+            "result": {
+              "duration": 847927300,
+              "status": "passed"
+            },
+            "line": 86,
+            "name": "Envio la solicitud DELETE a \u0027api/items/ID_PROJECT.json\u0027 con el json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "DELETE",
+                  "offset": 19
+                },
+                {
+                  "val": "api/items/ID_PROJECT.json",
+                  "offset": 29
+                }
+              ],
+              "location": "MyStepdefs.envioLaSolicitudApiProjectConElJson(String,String,String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "content_type": "",
+              "line": 87,
+              "value": ""
+            }
+          },
+          {
+            "result": {
+              "duration": 96300,
+              "status": "passed"
+            },
+            "line": 89,
+            "name": "Se espera el codigo de respuesta 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepdefs.seEsperaElCodigoDeRespuesta(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 694345900,
+              "status": "passed"
+            },
+            "line": 91,
+            "name": "Envio la solicitud GET a \u0027api/items/ID_PROJECT.json\u0027 con el json",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GET",
+                  "offset": 19
+                },
+                {
+                  "val": "api/items/ID_PROJECT.json",
+                  "offset": 26
+                }
+              ],
+              "location": "MyStepdefs.envioLaSolicitudApiProjectConElJson(String,String,String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "content_type": "",
+              "line": 92,
+              "value": ""
+            }
+          },
+          {
+            "result": {
+              "duration": 105700,
+              "status": "passed"
+            },
+            "line": 94,
+            "name": "Se espera el codigo de respuesta 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 33
+                }
+              ],
+              "location": "MyStepdefs.seEsperaElCodigoDeRespuesta(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 356000,
+              "status": "passed"
+            },
+            "line": 95,
+            "name": "Se espera que el Body de respuesta sea igual",
+            "match": {
+              "location": "MyStepdefs.seEsperaQueElBodyDeRespuestaSeaIgual(String)"
+            },
+            "keyword": "And ",
+            "doc_string": {
+              "content_type": "",
+              "line": 96,
+              "value": "{\r\n\"Id\": \"EXCLUDE\",\r\n\"Content\": \"ITEM_PROJECT ABC\",\r\n\"ItemType\": 1,\r\n\"Checked\": true,\r\n\"ProjectId\": null,\r\n\"ParentId\": null,\r\n\"Path\": \"\",\r\n\"Collapsed\": false,\r\n\"DateString\": null,\r\n\"DateStringPriority\": 0,\r\n\"DueDate\": \"\",\r\n\"Recurrence\": null,\r\n\"ItemOrder\": null,\r\n\"Priority\": 4,\r\n\"LastSyncedDateTime\": \"EXCLUDE\",\r\n\"Children\": [],\r\n\"DueDateTime\": null,\r\n\"CreatedDate\": \"EXCLUDE\",\r\n\"LastCheckedDate\": \"EXCLUDE\",\r\n\"LastUpdatedDate\": \"EXCLUDE\",\r\n\"Deleted\": \"EXCLUDE\",\r\n\"Notes\": \"\",\r\n\"InHistory\": true,\r\n\"SyncClientCreationId\": null,\r\n\"DueTimeSpecified\": true,\r\n\"OwnerId\": \"EXCLUDE\"\r\n}"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "line": 2,
+            "name": "@Tarea2"
+          }
+        ]
+      }
+    ],
+    "name": "Proyecto",
+    "description": "",
+    "id": "proyecto",
+    "keyword": "Feature",
+    "uri": "createItem.feature"
+  }
+]
